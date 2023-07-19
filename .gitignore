@@ -56,6 +56,8 @@ yalc.lock
 # npm package zips
 *.tgz
 
+lib
+
 .env
 .env.local
 .env.development.local

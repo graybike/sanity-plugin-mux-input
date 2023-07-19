@@ -58,7 +58,8 @@
     "prepublishOnly": "run-s build",
     "test": "npm run lint && npm run type-check && npm run build",
     "type-check": "tsc --noEmit",
-    "watch": "pkg-utils watch --strict"
+    "watch": "pkg-utils watch --strict",
+    "postinstall": "run-s clean && plugin-kit verify-package --silent && pkg-utils build --strict && pkg-utils --strict"
   },
   "dependencies": {
     "@mux/mux-video-react": "^0.7.7",
