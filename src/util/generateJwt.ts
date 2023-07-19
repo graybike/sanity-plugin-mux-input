@@ -30,7 +30,7 @@ export function generateJwt<T extends Audience>(
     throw new TypeError('Missing signingKeyPrivate')
   }
 
-  const {default: sign} = suspend(() => import('jsonwebtoken-esm/sign'), ['jsonwebtoken-esm/sign'])
+  const {sign} = suspend(() => import('jsonwebtoken-esm'), ['jsonwebtoken-esm'])
 
   return sign(
     payload ? JSON.parse(JSON.stringify(payload, (_, v) => v ?? undefined)) : {},
