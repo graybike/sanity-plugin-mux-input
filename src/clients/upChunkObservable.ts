@@ -1,9 +1,10 @@
-import {createUpload} from '@mux/upchunk'
+// @ts-ignore
+import {UpChunk} from '@mux/upchunk'
 import {Observable} from 'rxjs'
 
 export function createUpChunkObservable(uuid: string, uploadUrl: string, source: File) {
   return new Observable((subscriber) => {
-    const upchunk = createUpload({
+    const upchunk = UpChunk.createUpload({
       endpoint: uploadUrl,
       file: source,
       dynamicChunkSize: true, // changes the chunk size based on network speeds
