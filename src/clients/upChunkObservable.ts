@@ -1,6 +1,6 @@
 // @ts-ignore
-import {UpChunk} from '@mux/upchunk'
 import {Observable} from 'rxjs'
+const UpChunk = require('@mux/upchunk')
 
 export function createUpChunkObservable(uuid: string, uploadUrl: string, source: File) {
   return new Observable((subscriber) => {
